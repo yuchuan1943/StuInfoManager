@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="StuInfoManager.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%=Page.Title %></title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/Site.css" rel="stylesheet" />
+    <link href="/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <form runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">主页</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/Student/Index.aspx">学生信息</a></li>
+                        <li><a href="/Account/Manage.aspx">管理员信息</a></li>
+                    </ul>
+                    <ul id="loginStatus" runat="server" class="nav navbar-nav navbar-right">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%=DateTime.Now.Year %> - 学生信息管理系统</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
